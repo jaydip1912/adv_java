@@ -8,7 +8,7 @@ public class DataBase_CreateTable
         Connection con = null;
         Statement st = null;
         String Driver ="com.mysql.cj.jdbc.Driver";
-        String Url ="jdbc:mysql://localhost/jp";
+        String Url ="jdbc:mysql://localhost:3306/jp";
         String User ="root";
         String Pass ="";
         
@@ -16,13 +16,11 @@ public class DataBase_CreateTable
         {
             Class.forName(Driver);
             con=DriverManager.getConnection(Url, User, Pass);
-            
             st=con.createStatement();
             
             String query ="create table tb(id int ,name varchar(20))";
             st.execute(query);
-            System.out.println("Table is created");
-            
+            System.out.println("Table is created");          
             con.close();
         }
         catch(Exception e)

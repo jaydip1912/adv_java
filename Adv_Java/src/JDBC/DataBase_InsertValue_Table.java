@@ -16,7 +16,6 @@ public class DataBase_InsertValue_Table
         {
             Class.forName(Driver);
             con=DriverManager.getConnection(Url, User, Pass);
-            
             st=con.createStatement();
             
             String query ="insert into tb values(4,'jppp')";
